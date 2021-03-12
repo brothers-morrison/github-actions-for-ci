@@ -1,0 +1,12 @@
+name: Team awesome's approval workflow
+on: pull_request_review
+jobs:
+  labelWhenApproved:
+    runs-on: ubuntu-latest
+    env:
+      APPROVALS: 1
+      GITHUB_TOKEN: fbe7b698450735fec171929c581e5d87c813734f
+      ADD_LABEL: "num approvals met = true"
+    steps:
+      - name: community label when approved
+      - uses: pullreminders/label-when-approved-action
